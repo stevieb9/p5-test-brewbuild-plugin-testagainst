@@ -1,0 +1,6 @@
+Revision history for Test-BrewBuild-Plugin-TestAgainst
+
+0.01    2016-03-24
+        - takes a module name as a parameter to brewbuild_exec, and tests that
+          module against the current revision of the one you're working on
+
