@@ -6,12 +6,12 @@ use warnings;
 
 package Test::BrewBuild::Plugin::TestAgainst;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $module;
 
 sub brewbuild_exec{
-    shift;
+    shift if ref $_[0];
     $module = shift;
     return _cmd($module);
 }    
