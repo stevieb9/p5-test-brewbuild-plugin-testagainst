@@ -11,7 +11,7 @@ our $VERSION = '0.03';
 my $state = bless {}, __PACKAGE__;
 
 sub brewbuild_exec{
-    shift;
+    shift if ref $_[0] ne 'Logging::Simple';
     my $log = shift;
     my $module = shift;
     return _cmd($module);
