@@ -11,6 +11,8 @@ our $VERSION = '0.02';
 my $state = bless {}, __PACKAGE__;
 
 sub brewbuild_exec{
+    shift;
+    my $log = shift;
     my $module = shift;
     return _cmd($module);
 }    
@@ -72,10 +74,4 @@ Same as L<Test::BrewBuild>
 =cut
 
 __DATA__
-if ($^O eq 'MSWin32'){
-    my $make = -e 'Makefile.PL' ? 'dmake' : 'Build';
-    system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
-}
-else {
-    system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
-}
+system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";

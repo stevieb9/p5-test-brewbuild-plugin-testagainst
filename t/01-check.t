@@ -10,7 +10,7 @@ my $mod = 'Test::BrewBuild::Plugin::TestAgainst';
 
 can_ok ($mod, 'brewbuild_exec');
 
-my @ret = $mod->brewbuild_exec('Mock::Sub');
+my @ret = $mod->brewbuild_exec('', 'Mock::Sub');
 
 my @data = <DATA>;
 
@@ -27,10 +27,4 @@ for (@data){
 done_testing();
 
 __DATA__
-if ($^O eq 'MSWin32'){
-    my $make = -e 'Makefile.PL' ? 'dmake' : 'Build';
-    system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
-}
-else {
-    system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
-}
+system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
