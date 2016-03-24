@@ -8,23 +8,30 @@ package Test::BrewBuild::Plugin::TestAgainst;
 
 our $VERSION = '0.02';
 
-my $module;
+my $state = bless {}, __PACKAGE__;
 
 sub brewbuild_exec{
-    shift if ref $_[0];
-    $module = shift;
+    my $module = shift;
     return _cmd($module);
 }    
 sub _cmd {
     my $module = shift;
 
-    my @cmd = <DATA>;
+    #FIXME: we have to do the below nonsense, because DATA can't
+    # be opened twice if we get called more than once per run
+
+    if (! defined $state->{raw}){
+        @{ $state->{raw} } = <DATA>;
+    }
+
+    my @cmd = @{ $state->{raw} };
+
     for (@cmd){
         s/%\[MODULE\]%/$module/g;
     }
 
     return @cmd;
-}    
+}
 
 1;
 
