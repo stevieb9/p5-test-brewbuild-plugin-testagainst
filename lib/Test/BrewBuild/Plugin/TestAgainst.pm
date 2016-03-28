@@ -6,7 +6,7 @@ use warnings;
 
 package Test::BrewBuild::Plugin::TestAgainst;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 my $state = bless {}, __PACKAGE__;
 
@@ -74,4 +74,7 @@ Same as L<Test::BrewBuild>
 =cut
 
 __DATA__
-system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
+cpan App::cpanminus
+cpanm --installdeps .
+cpanm .
+cpanm --test-only %[MODULE]%

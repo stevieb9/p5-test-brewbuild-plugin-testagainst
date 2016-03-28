@@ -27,4 +27,7 @@ for (@data){
 done_testing();
 
 __DATA__
-system "cpanm --installdeps . && cpanm . && cpanm --test-only %[MODULE]%";
+cpan App::cpanminus
+cpanm --installdeps .
+cpanm .
+cpanm --test-only %[MODULE]%

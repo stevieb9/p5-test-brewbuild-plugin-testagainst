@@ -1,5 +1,9 @@
 Revision history for Test-BrewBuild-Plugin-TestAgainst
 
+0.04    2016-03-29
+        - due to windows not able to properly set PATH, we had to change the
+          format of the plugins to individual lines instead of exec'ing a file
+
 0.03    2016-03-25
         - an initial throwaway shift() has been standardized due to fixes in
           the plugin execution code in Test::BrewBuild::exec()
