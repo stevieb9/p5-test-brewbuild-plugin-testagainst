@@ -74,7 +74,6 @@ Same as L<Test::BrewBuild>
 =cut
 
 __DATA__
-cpan App::cpanminus
 cpanm --installdeps .
 cpanm .
 cpanm --test-only %[MODULE]%
