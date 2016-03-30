@@ -6,7 +6,7 @@ use warnings;
 
 package Test::BrewBuild::Plugin::TestAgainst;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 my $state = bless {}, __PACKAGE__;
 
