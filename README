@@ -5,7 +5,7 @@ NAME
 
 SYNOPSIS
 
-        brewbuild --plugin Test::BrewBuild::Plugin::TestAgainst --args Rev::Dep
+        brewbuild --plugin Test::BrewBuild::Plugin::TestAgainst --args Module::Name
 
 DESCRIPTION
 

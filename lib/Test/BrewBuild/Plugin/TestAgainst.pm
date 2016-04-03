@@ -4,9 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-package Test::BrewBuild::Plugin::TestAgainst;
-
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 my $state = bless {}, __PACKAGE__;
 
@@ -44,7 +42,7 @@ builds of the one being tested
 
 =head1 SYNOPSIS
 
-    brewbuild --plugin Test::BrewBuild::Plugin::TestAgainst --args Rev::Dep
+    brewbuild --plugin Test::BrewBuild::Plugin::TestAgainst --args Module::Name
 
 =head1 DESCRIPTION
 
